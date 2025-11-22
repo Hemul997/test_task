@@ -1,0 +1,43 @@
+services:
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./:/var/www
+      - ./_docker/nginx/conf.d/:/etc/nginx/conf.d
+    ports:
+      - "8008:80"
+    container_name: app_tt_nginx
+    networks:
+      - app_tt_network
+    depends_on:
+      - app
+
+  app:
+    build:
+      context: .
+      dockerfile: _docker/app/Dockerfile
+    volumes:
+      - ./:/var/www
+    container_name: app_tt
+    networks:
+      - app_tt_network
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.4.7
+    restart: always
+    volumes:
+      - ./tmp/db:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: app_tt_db
+      MYSQL_ROOT_PASSWORD: root
+    networks:
+      - app_tt_network
+    ports:
+      - "8009:3306"
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
+    container_name: app_tt_db
+
+networks:
+  app_tt_network:
