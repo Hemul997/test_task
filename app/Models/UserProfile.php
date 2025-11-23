@@ -3,14 +3,19 @@
 namespace App\Models;
 
 use App\Enums\UserGenderEnum;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * Сущность "Профиль пользователя"
  *
- * @property      int $user_id;
- * @property-read User $user пользователь, к которому привязан профиль
+ * @property      int            $user_id  ID пользователя
+ * @property-read User           $user     пользователь, к которому привязан профиль
+ * @property      UserGenderEnum $gender   Пол
+ * @property      Carbon         $birthday Дата рождения
+ * @property      string         $phone    Номер телефона
+ * @property      Carbon         $created_at
  */
 class UserProfile extends Model
 {
@@ -34,7 +39,7 @@ class UserProfile extends Model
     protected function casts(): array
     {
         return [
-            'gender' => UserGenderEnum::class,
+            'gender'   => UserGenderEnum::class,
             'birthday' => 'date:Y-m-d',
         ];
     }

@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 /**
  * Сущность "Новость"
  *
- * @property       string $title Название
+ * @property       string $title       Название
  * @property       string $description Описание новости
- * @property       int    $user_id ID автора новости
- * @property-read  User   $author Автор
+ * @property       int    $author_id   ID автора новости
+ * @property-read  User   $author      Автор
  */
 class News extends Model
 {
