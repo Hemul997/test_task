@@ -36,6 +36,16 @@
                     <td>{{ $news_item->id }}</td>
                     <td>{{ $news_item->title }}</td>
                     <td>{{ $news_item->description }}</td>
+                    <td>
+                        <a class="btn btn-info btn-sm" target="_blank" href="{{ route('admin.news.show', $news_item->id)}}"><i class="fa-solid fa-eye"></i></a>
+                        <a class="btn btn-info btn-sm" target="_blank" href="{{ route('admin.news.edit', $news_item->id)}}"><i class="fa-solid fa-pencil"></i></a>
+                        <form action="{{ route('admin.news.destroy', $news_item->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+
+                            <button type="submit" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        </form>
+                    </td>
                 </tr>
             @empty
                 <tr>
