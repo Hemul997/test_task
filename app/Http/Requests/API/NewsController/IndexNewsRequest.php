@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\NewsController;
+namespace App\Http\Requests\API\NewsController;
 
 use Illuminate\Foundation\Http\FormRequest;
 

@@ -2,11 +2,11 @@
 
 return [
     // Navbar items:
-    [
-        'type' => 'navbar-search',
-        'text' => 'search',
-        'topnav_right' => true,
-    ],
+//    [
+//        'type' => 'navbar-search',
+//        'text' => 'search',
+//        'topnav_right' => true,
+//    ],
     [
         'type' => 'fullscreen-widget',
         'topnav_right' => true,
@@ -78,7 +78,7 @@ return [
             ],
         ],
     ],
-    ['header' => 'labels'],
+    /*['header' => 'labels'],
     [
         'text' => 'important',
         'icon_color' => 'red',
@@ -93,5 +93,5 @@ return [
         'text' => 'information',
         'icon_color' => 'cyan',
         'url' => '#',
-    ],
+    ],*/
 ];

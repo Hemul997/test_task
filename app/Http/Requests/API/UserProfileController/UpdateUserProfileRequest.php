@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\UserProfileController;
+namespace App\Http\Requests\API\UserProfileController;
 
 use App\Enums\UserGenderEnum;
 use App\Models\UserProfile;

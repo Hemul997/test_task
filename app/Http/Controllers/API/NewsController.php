@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\NewsController\IndexNewsRequest;
-use App\Http\Requests\NewsController\StoreNewsRequest;
+use App\Http\Requests\API\NewsController\IndexNewsRequest;
+use App\Http\Requests\API\NewsController\StoreNewsRequest;
 use App\Http\Resources\NewsResource;
 use App\Models\News;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
