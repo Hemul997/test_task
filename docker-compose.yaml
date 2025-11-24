@@ -19,6 +19,7 @@ services:
     volumes:
       - ./:/var/www
     container_name: app_tt
+    user: "1000:1000"
     networks:
       - app_tt_network
     depends_on:
