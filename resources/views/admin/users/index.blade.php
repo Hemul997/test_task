@@ -33,6 +33,16 @@
                     <td>{{ $user->email }}</td>
                     <td>
                         <a class="btn btn-info btn-sm" target="_blank" href="{{ route('admin.users.show', $user->id)}}"><i class="fa-solid fa-eye"></i></a>
+                        <a class="btn btn-info btn-sm" target="_blank" href="{{ route('admin.users.edit', $user->id)}}"><i class="fa-solid fa-pencil"></i></a>
+                        @if(Auth::user()->id !== $user->id)
+                            <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+
+                                <button type="submit" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                            </form>
+                        @endif
+
                     </td>
                 </tr>
             @empty
