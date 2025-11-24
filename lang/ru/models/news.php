@@ -1,7 +1,8 @@
 <?php
 
 return [
-    'entity_name' => 'Новость',
+    'entity_name'         => 'Новость',
+    'entity_plural_name'  => 'Новости',
 
     'fields' => [
         'title'       => 'Заголовок',
