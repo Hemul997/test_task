@@ -11,9 +11,9 @@
         @session('success')
             <div class="alert alert-success" role="alert"> {{ $value }} </div>
         @endsession
-        {{--<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <a class="btn btn-success btn-sm" href="{{ route('admin.users.create') }}"> <i class="fa fa-plus"></i>Создать запись</a>
-        </div>--}}
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <a class="btn btn-success btn-sm" href="{{ route('admin.users.create') }}"> <i class="fa fa-plus"></i>@lang('admin/operations/index.create_entry')</a>
+        </div>
 
         <table class="table table-bordered table-striped mt-4">
             <thead>
@@ -31,7 +31,9 @@
                     <td>{{ $user->id }}</td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
-                    <td></td>
+                    <td>
+                        <a class="btn btn-info btn-sm" target="_blank" href="{{ route('admin.users.show', $user->id)}}"><i class="fa-solid fa-eye"></i></a>
+                    </td>
                 </tr>
             @empty
                 <tr>
